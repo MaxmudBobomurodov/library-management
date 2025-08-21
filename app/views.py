@@ -38,7 +38,7 @@ def change_book(request):
             return redirect('book_list')
 
 @login_required
-@permission_required('library.change_book', raise_exception=True)
+@permission_required('app.library.change_book', raise_exception=True)
 def edit_book(request, book_id):
     book = BookModel.objects.get(BookModel, id=id)
     if request.method == 'POST':
@@ -52,7 +52,7 @@ def edit_book(request, book_id):
 
 
 @login_required
-@permission_required('library.delete_book', raise_exception=True)
+@permission_required('app.library.delete_book', raise_exception=True)
 def delete_book(request, book_id):
     book = BookModel.objects.get(BookModel, id=id)
     book.delete()
